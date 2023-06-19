@@ -1,4 +1,6 @@
 const choices = ["Rock", "Paper", "Scissors"];
+var userScore = 0;
+var computerScore = 0;
 
 function computerChoice(){
     let computer = choices[Math.floor(Math.random() * choices.length)];
@@ -12,22 +14,31 @@ function playerChoice(){
     return userChoice;
 }
 
+// Put the both functions inside game function
+// Put the game function inside a onClick event
+
 function game(player, computer){
 
     if(player === computer){
         alert('DRAW!!')
     } else if(player === "Rock" && computer === "Scissors") {
         alert('Player WIN!!')
+        userScore += 1;
     } else if(player === "Rock" && computer === "Paper") {
         alert('Computer WIN!!')
+        computerScore += 1;
     } else if(player === "Scissors" && computer === "Rock") {
         alert('Computer WIN!!')
+        computerScore += 1;
     } else if(player === "Scissors" && computer === "Paper") {
         alert('Player WIN!!')
+        userScore += 1;
     } else if(player === "Paper" && computer === "Scissors") {
         alert('Computer WIN!!')
+        computerScore += 1;
     } else if(player === "Paper" && computer === "Rock") {
         alert('Player WIN!!')
+        userScore += 1;
     }
 
 }
